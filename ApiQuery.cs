@@ -37,7 +37,8 @@ class PlaylistItem
     {
         var pattern = "[/\\:*?\"<>]";
         var regex = new Regex(pattern);
-        return regex.Replace(input, "");
+        var firstPass = regex.Replace(input, "");
+        return firstPass.Replace("[", "").Replace("]", "");
     }
 }
 
